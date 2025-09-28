@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playing Card API</title>
+</head>
+<body>
+  <h1>Playing Card API</h1>
+  <button onclick="getCards()">Get All Cards</button>
+  <br><br>
+  <input type="number" id="cardId" placeholder="Enter Card ID">
+  <button onclick="getCardById()">Get Card by ID</button>
+  <button onclick="deleteCardById()">Delete Card by ID</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function getCards() {
+      const res = await fetch("/cards");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function getCardById() {
+      const id = document.getElementById('cardId').value;
+      if (!id) {
+        alert('Please enter a Card ID');
+        return;
+      }
+      const res = await fetch(`/cards/${id}`);
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function deleteCardById() {
+      const id = document.getElementById('cardId').value;
+      if (!id) {
+        alert('Please enter a Card ID');
+        return;
+      }
+      const res = await fetch(`/cards/${id}`, { method: 'DELETE' });
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      // Refresh the card list after deletion
+      getCards();
+    }
+  </script>
+</body>
+</html>

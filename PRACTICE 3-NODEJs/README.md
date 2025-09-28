@@ -1,35 +1,7 @@
-NodeJS + Express
-======================
-This is a simple NodeJS + Express application. This application serves as a basic template for a web server using NodeJS for the backend, Express as the web application framework.
-
-What does this application do?
--------------------------------
-This application serves a simple web server that listens on defined port, default: `3000`.
+<h1>PRACTICE 3 NODEJS</h1>
 
 
-# How to run?
-You can run the application in one of the following ways:
+<img width="478" height="226" alt="Screenshot 2025-09-28 at 10 49 31 PM" src="https://github.com/user-attachments/assets/045de412-b140-4bcd-9056-58a5501ce6c4" />
+<img width="478" height="226" alt="Screenshot 2025-09-28 at 10 49 28 PM" src="https://github.com/user-attachments/assets/e1354fe1-2018-48f8-91f5-a1903d1217da" />
 
-1. Press `F5`. This will start the application in debug mode.
-
-2. Open a terminal by going to 'View' -> 'Terminal'. Then run: 
-    > `npm run dev`
-
-This will start the application in development mode.
-
-
-Via curl command:
------------------
-1. Open a terminal.
-2. Type the following command: 
-   > `curl http://localhost:3000`
-3. Press 'Enter' to make the request.
-
-Via Thunder Client:
--------------------
-1. Click on the Thunder Client icon on the activity bar on the side. If you can't find it, you can search for 'Thunder Client' in the 'View' -> 'Extensions' menu.
-2. Once Thunder Client is open, click on 'New Request'.
-3. In the 'Request URL' field, enter the URL of your application (e.g., http://localhost:3000) and select the HTTP method from the dropdown menu.
-5. Click on 'Send' to make the request.
-
-Happy coding! 🙂
+<img width="613" height="635" alt="Screenshot 2025-09-28 at 10 49 14 PM" src="https://github.com/user-attachments/assets/4cd37427-6ab8-42e0-aad4-84e029156262" />

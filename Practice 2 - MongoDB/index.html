@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+<body>
+    <h1>Student Management</h1>
+
+    <h2>Add Student</h2>
+    <form method="POST" action="/students">
+        <input name="name" placeholder="Name" required>
+        <input name="age" placeholder="Age" type="number" required>
+        <input name="course" placeholder="Course" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Students List</h2>
+    <ul id="students"></ul>
+
+    <script>
+        async function loadStudents() {
+            const res = await fetch('/students');
+            const students = await res.json();
+            const ul = document.getElementById('students');
+            ul.innerHTML = '';
+            students.forEach(s => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${s.name} | ${s.age} | ${s.course}
+                    <form style="display:inline" method="POST" action="/students/delete/${s._id}">
+                        <button>Delete</button>
+                    </form>
+                    <form style="display:inline" method="POST" action="/students/update/${s._id}">
+                        <input name="name" placeholder="New Name">
+                        <input name="age" placeholder="New Age" type="number">
+                        <input name="course" placeholder="New Course">
+                        <button>Update</button>
+                    </form>
+                `;
+                ul.appendChild(li);
+            });
+        }
+
+        loadStudents();
+    </script>
+</body>
+</html>

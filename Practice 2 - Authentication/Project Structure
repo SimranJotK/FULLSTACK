@@ -1,0 +1,11 @@
+jwt-auth-server/
+├── package.json
+├── server.js
+├── config/
+│   └── config.js
+├── middleware/
+│   └── auth.js
+├── routes/
+│   └── auth.js
+└── data/
+    └── users.js
